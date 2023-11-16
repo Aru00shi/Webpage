@@ -1,0 +1,77 @@
+arushisrivastava@Arushis-MacBook-Pro ~ % npx create-next-app my-framer-motion-app
+cd my-framer-motion-app
+
+The directory my-framer-motion-app contains files that could conflict:
+
+  .eslintrc.json
+  README.md
+  app/
+  next-env.d.ts
+  next.config.js
+  package.json
+  postcss.config.js
+  public/
+  tailwind.config.ts
+  tsconfig.json
+
+Either try using a new directory name, or remove the files listed above.
+
+arushisrivastava@Arushis-MacBook-Pro my-framer-motion-app % npm install framer-motion
+
+
+added 334 packages, and audited 335 packages in 54s
+
+116 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+arushisrivastava@Arushis-MacBook-Pro my-framer-motion-app % // components/AnimatedBox.js
+import { motion } from 'framer-motion';
+
+const AnimatedBox = () => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+    >
+      <div style={{ width: '100px', height: '100px', background: 'blue' }}>
+        Your Content Goes Here
+      </div>
+    </motion.div>
+  );
+};
+
+export default AnimatedBox;
+
+zsh: parse error near `}'
+arushisrivastava@Arushis-MacBook-Pro my-framer-motion-app % // pages/index.js
+import AnimatedBox from '../components/AnimatedBox';
+
+const Home = () => {
+  return (
+    <div>
+      <h1>Welcome to My Framer Motion App</h1>
+      <AnimatedBox />
+    </div>
+  );
+};
+
+export default Home;
+
+zsh: parse error near `\n'
+arushisrivastava@Arushis-MacBook-Pro my-framer-motion-app % npm run dev
+
+
+> my-framer-motion-app@0.1.0 dev
+> next dev
+
+   ▲ Next.js 14.0.2
+   - Local:        http://localhost:3000
+
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+ 
